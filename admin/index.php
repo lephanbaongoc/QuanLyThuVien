@@ -30,8 +30,18 @@
       		</div>
     	</form>
   	</div>
-
+      <?php
+  		if(isset($_SESSION['error'])){
+  			echo "
+  				<div class='callout callout-danger text-center mt20'>
+			  		<p>".$_SESSION['error']."</p> 
+			  	</div>
+  			";
+  			unset($_SESSION['error']);
+  		}
+  	?>
 </div>
 
+<?php include 'includes/scripts.php' ?>
 </body>
 </html>
