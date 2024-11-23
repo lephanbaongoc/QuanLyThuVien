@@ -69,6 +69,7 @@
     </div>
 </div>
 
+<!-- Delete -->
 <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
