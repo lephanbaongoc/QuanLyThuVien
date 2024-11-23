@@ -1,0 +1,5 @@
+Admin page: 
+ 	-username: admin
+	-password: admin
+Student page:
+	-username: student_id
