@@ -56,30 +56,30 @@
 </div>
 
 <!-- Delete -->
-<div class="modal fade" id="delete">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Deleting...</b></h4>
-            </div>
-            <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="category_delete.php">
-                <input type="hidden" class="catid" name="id">
-                <div class="text-center">
-                    <p>DELETE BOOK</p>
-                    <h2 id="del_cat" class="bold"></h2>
-                </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-danger btn-flat" name="delete"><i class="fa fa-trash"></i> Delete</button>
-              </form>
-            </div>
+<div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header bg-danger text-white">
+        <h5 class="modal-title" id="deleteModalLabel"><i class="fa fa-trash"></i> Confirm Deletion</h5>
+        <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form method="POST" action="category_delete.php">
+        <div class="modal-body text-center">
+          <input type="hidden" class="catid" name="id">
+          <p>Are you sure you want to delete this category?</p>
+          <h4 id="del_cat" class="text-danger font-weight-bold"></h4>
         </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+          <button type="submit" class="btn btn-danger" name="delete"><i class="fa fa-trash"></i> Delete</button>
+        </div>
+      </form>
     </div>
+  </div>
 </div>
+
 
 
      

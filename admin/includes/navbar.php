@@ -1,3 +1,14 @@
+<?php
+// Đảm bảo biến $user được khởi tạo
+if (!isset($user)) {
+    $user = [
+        'photo' => null,
+        'firstname' => 'Guest',
+        'lastname' => 'User',
+        'created_on' => '1970-01-01' // Ngày mặc định nếu không có
+    ];
+}
+?>
 <header class="main-header">
   <!-- Logo -->
   <a href="#" class="logo">
