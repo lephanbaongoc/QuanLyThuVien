@@ -99,21 +99,42 @@
 <script>
 $(function(){
   $(document).on('click', '.edit', function(e){
-    
+    e.preventDefault();
+    $('#edit').modal('show');
+    var id = $(this).data('id');
+    getRow(id);
   });
 
   $(document).on('click', '.delete', function(e){
-   
+    e.preventDefault();
+    $('#delete').modal('show');
+    var id = $(this).data('id');
+    getRow(id);
   });
 
   $(document).on('click', '.photo', function(e){
-    
+    e.preventDefault();
+    var id = $(this).data('id');
+    getRow(id);
   });
 
 });
 
 function getRow(id){
-  
+  $.ajax({
+    type: 'POST',
+    url: 'student_row.php',
+    data: {id:id},
+    dataType: 'json',
+    success: function(response){
+      $('.studid').val(response.studid);
+      $('#edit_firstname').val(response.firstname);
+      $('#edit_lastname').val(response.lastname);
+      $('#selcourse').val(response.course_id);
+      $('#selcourse').html(response.code);
+      $('.del_stu').html(response.firstname+' '+response.lastname);
+    }
+  });
 }
 </script>
 </body>
