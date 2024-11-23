@@ -177,7 +177,31 @@
 </div>
 <!-- ./wrapper -->
 
+<!-- Chart Data -->
+<?php
+  $and = 'AND YEAR(date) = '.$year;
+  $months = array();
+  $return = array();
+  $borrow = array();
+  for( $m = 1; $m <= 12; $m++ ) {
+    $sql = "SELECT * FROM returns WHERE MONTH(date_return) = '$m' AND YEAR(date_return) = '$year'";
+    $rquery = $conn->query($sql);
+    array_push($return, $rquery->num_rows);
 
+    $sql = "SELECT * FROM borrow WHERE MONTH(date_borrow) = '$m' AND YEAR(date_borrow) = '$year'";
+    $bquery = $conn->query($sql);
+    array_push($borrow, $bquery->num_rows);
+
+    $num = str_pad( $m, 2, 0, STR_PAD_LEFT );
+    $month =  date('M', mktime(0, 0, 0, $m, 1));
+    array_push($months, $month);
+  }
+
+  $months = json_encode($months);
+  $return = json_encode($return);
+  $borrow = json_encode($borrow);
+
+?>
 
 <script>
 $(function(){
