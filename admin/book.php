@@ -132,7 +132,13 @@
 <script>
 $(function(){
   $('#select_category').change(function(){
-    
+    var value = $(this).val();
+    if(value == 0){
+      window.location = 'book.php';
+    }
+    else{
+      window.location = 'book.php?category='+value;
+    }
   });
 
   $(document).on('click', '.edit', function(e){
