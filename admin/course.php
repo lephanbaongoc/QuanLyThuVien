@@ -89,16 +89,33 @@
 <script>
 $(function(){
   $(document).on('click', '.edit', function(e){
-   
+    e.preventDefault();
+    $('#edit').modal('show');
+    var id = $(this).data('id');
+    getRow(id);
   });
 
   $(document).on('click', '.delete', function(e){
-    
+    e.preventDefault();
+    $('#delete').modal('show');
+    var id = $(this).data('id');
+    getRow(id);
   });
 });
 
 function getRow(id){
-  
+  $.ajax({
+    type: 'POST',
+    url: 'course_row.php',
+    data: {id:id},
+    dataType: 'json',
+    success: function(response){
+      $('.corid').val(response.id);
+      $('#edit_code').val(response.code);
+      $('#edit_title').val(response.title);
+      $('#del_code').html(response.code);
+    }
+  });
 }
 </script>
 </body>
