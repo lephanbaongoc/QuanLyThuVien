@@ -1,3 +1,13 @@
+<?php
+// Đảm bảo biến $user được khởi tạo
+if (!isset($user)) {
+    $user = [
+        'photo' => null,
+        'firstname' => 'Guest',
+        'lastname' => 'User'
+    ];
+}
+?>
 <aside class="main-sidebar">
   <!-- sidebar: style can be found in sidebar.less -->
   <section class="sidebar">
