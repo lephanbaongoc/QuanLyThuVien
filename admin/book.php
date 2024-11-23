@@ -142,16 +142,37 @@ $(function(){
   });
 
   $(document).on('click', '.edit', function(e){
-    
+    e.preventDefault();
+    $('#edit').modal('show');
+    var id = $(this).data('id');
+    getRow(id);
   });
 
   $(document).on('click', '.delete', function(e){
-    
+    e.preventDefault();
+    $('#delete').modal('show');
+    var id = $(this).data('id');
+    getRow(id);
   });
 });
 
 function getRow(id){
-  
+  $.ajax({
+    type: 'POST',
+    url: 'book_row.php',
+    data: {id:id},
+    dataType: 'json',
+    success: function(response){
+      $('.bookid').val(response.bookid);
+      $('#edit_isbn').val(response.isbn);
+      $('#edit_title').val(response.title);
+      $('#catselect').val(response.category_id).html(response.name);
+      $('#edit_author').val(response.author);
+      $('#edit_publisher').val(response.publisher);
+      $('#datepicker_edit').val(response.publish_date);
+      $('#del_book').html(response.title);
+    }
+  });
 }
 </script>
 </body>
