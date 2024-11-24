@@ -153,35 +153,47 @@
   </div>
 </div>
 
-
-<!-- Update Photo -->
-<div class="modal fade" id="edit_photo">
+<!-- Update Photo Modal -->
+<div class="modal fade" id="edit_photo" tabindex="-1" role="dialog" aria-labelledby="editPhotoLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
+            <!-- Modal Header -->
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b><span class="del_stu"></span></b></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="editPhotoLabel"><b><span class="del_stu"></span></b></h4>
             </div>
-            <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="student_edit_photo.php" enctype="multipart/form-data">
-                <input type="hidden" class="studid" name="id">
-                <div class="form-group">
-                    <label for="photo" class="col-sm-3 control-label">Photo</label>
 
-                    <div class="col-sm-9">
-                      <input type="file" id="photo" name="photo" required>
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <form class="form-horizontal" method="POST" action="student_edit_photo.php" enctype="multipart/form-data">
+                    <!-- Hidden Student ID -->
+                    <input type="hidden" class="studid" name="id">
+
+                    <!-- Photo Upload Field -->
+                    <div class="form-group">
+                        <label for="photo" class="col-sm-3 control-label">Upload Photo</label>
+                        <div class="col-sm-9">
+                            <input type="file" id="photo" name="photo" class="form-control" required>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
+
+            <!-- Modal Footer -->
             <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-success btn-flat" name="upload"><i class="fa fa-check-square-o"></i> Update</button>
-              </form>
+                <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal">
+                    <i class="fa fa-close"></i> Close
+                </button>
+                <button type="submit" class="btn btn-success btn-flat" name="upload">
+                    <i class="fa fa-check-square-o"></i> Update Photo
+                </button>
             </div>
         </div>
     </div>
 </div>
+
 
 
      
