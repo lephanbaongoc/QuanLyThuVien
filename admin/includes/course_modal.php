@@ -43,55 +43,42 @@
         </div>
     </div>
 </div>
-<!-- Edit Course Modal -->
-<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="editCourseLabel" aria-hidden="true">
+
+<!-- Edit -->
+<div class="modal fade" id="edit">
     <div class="modal-dialog">
         <div class="modal-content">
-            <!-- Modal Header -->
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title" id="editCourseLabel"><b>Edit Course</b></h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title"><b>Edit Course</b></h4>
             </div>
-
-            <!-- Modal Body -->
             <div class="modal-body">
-                <form class="form-horizontal" method="POST" action="course_edit.php">
-                    <!-- Hidden Course ID -->
-                    <input type="hidden" class="corid" name="id">
+              <form class="form-horizontal" method="POST" action="course_edit.php">
+                <input type="hidden" class="corid" name="id">
+                <div class="form-group">
+                    <label for="edit_code" class="col-sm-3 control-label">Code</label>
 
-                    <!-- Course Code Field -->
-                    <div class="form-group">
-                        <label for="edit_code" class="col-sm-3 control-label">Course Code</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="edit_code" name="code" placeholder="Enter course code" required>
-                        </div>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="edit_code" name="code">
                     </div>
+                </div>
+                <div class="form-group">
+                    <label for="edit_title" class="col-sm-3 control-label">Title</label>
 
-                    <!-- Course Title Field -->
-                    <div class="form-group">
-                        <label for="edit_title" class="col-sm-3 control-label">Course Title</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" id="edit_title" name="title" placeholder="Enter course title" required>
-                        </div>
+                    <div class="col-sm-9">
+                      <input type="text" class="form-control" id="edit_title" name="title">
                     </div>
-                </form>
+                </div>
             </div>
-
-            <!-- Modal Footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal">
-                    <i class="fa fa-close"></i> Close
-                </button>
-                <button type="submit" class="btn btn-success btn-flat" name="edit">
-                    <i class="fa fa-check-square-o"></i> Update Course
-                </button>
+              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
+              <button type="submit" class="btn btn-success btn-flat" name="edit"><i class="fa fa-check-square-o"></i> Update</button>
+              </form>
             </div>
         </div>
     </div>
 </div>
-
 
 <!-- Delete -->
 <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
