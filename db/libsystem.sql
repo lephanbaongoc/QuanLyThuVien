@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 20, 2024 lúc 06:20 AM
+-- Thời gian đã tạo: Th10 24, 2024 lúc 08:09 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -57,6 +57,7 @@ CREATE TABLE `books` (
   `title` text NOT NULL,
   `author` varchar(150) NOT NULL,
   `publisher` varchar(150) NOT NULL,
+  `file_name` varchar(200) NOT NULL,
   `publish_date` date NOT NULL,
   `status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -65,11 +66,13 @@ CREATE TABLE `books` (
 -- Đang đổ dữ liệu cho bảng `books`
 --
 
-INSERT INTO `books` (`id`, `isbn`, `category_id`, `title`, `author`, `publisher`, `publish_date`, `status`) VALUES
-(2, 'bookisbntest', 2, 'Calculus Made Easy', 'Author Me', 'Self Publish Inc', '2018-05-02', 0),
-(13, '159420229X', 3, 'Moonwalking with Einstein: The Art and Science of Remembering Everything ', 'Joshua Foer ', 'Penguin Press HC', '2020-05-11', 0),
-(14, 'worldwar2abcd', 4, 'World War II', 'Hitle', 'HItle', '1934-06-26', 0),
-(15, 'romeoandjuliet', 4, 'Romeo & Juliet', 'Apple', 'Titanic', '1999-12-23', 0);
+INSERT INTO `books` (`id`, `isbn`, `category_id`, `title`, `author`, `publisher`, `file_name`, `publish_date`, `status`) VALUES
+(2, 'bookisbntest', 2, 'Calculus Made Easy', 'Author Me', 'Self Publish Inc', '', '2018-05-02', 0),
+(13, '159420229X', 3, 'Moonwalking with Einstein: The Art and Science of Remembering Everything ', 'Joshua Foer ', 'Penguin Press HC', '', '2020-05-11', 0),
+(14, 'worldwar2abcd', 4, 'World War II', 'Hitle', 'HItle', '', '1934-06-26', 0),
+(15, 'romeoandjuliet', 4, 'Romeo & Juliet', 'Apple', 'Titanic', 'romeo-and-juliet.pdf', '1999-12-23', 0),
+(17, 'blueeyes', 5, 'Mắt Biếc', 'Nguyễn Ngọc Ánh', 'Nhà xuất bản Trẻ', 'mat-biec.pdf', '1990-01-01', 1),
+(18, 'dataanalysiswithmexv', 3, 'Data Analysis with Microsoft Excel', 'Berk & Carey', 'Microsoft', '', '2019-02-13', 0);
 
 -- --------------------------------------------------------
 
@@ -90,7 +93,8 @@ CREATE TABLE `borrow` (
 --
 
 INSERT INTO `borrow` (`id`, `student_id`, `book_id`, `date_borrow`, `status`) VALUES
-(19, 6, 13, '2024-11-20', 1);
+(19, 6, 13, '2024-11-20', 1),
+(20, 10, 17, '2024-11-24', 0);
 
 -- --------------------------------------------------------
 
@@ -111,7 +115,8 @@ INSERT INTO `category` (`id`, `name`) VALUES
 (1, 'Engineering'),
 (2, 'Mathematics'),
 (3, 'Science and Technology'),
-(4, 'History');
+(4, 'History'),
+(5, 'Romance');
 
 -- --------------------------------------------------------
 
@@ -177,10 +182,11 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `student_id`, `firstname`, `lastname`, `photo`, `course_id`, `created_on`) VALUES
-(6, 'MQH608941253', 'Ngọc', 'Lê', '', 3, '2024-11-16'),
-(7, 'FSI394270158', 'Uyên', 'Nguyễn', '', 4, '2024-11-16'),
+(6, 'MQH608941253', 'Ngọc', 'Lê', 'images (1).jpg', 3, '2024-11-20'),
+(7, 'FSI394270158', 'Uyên', 'Nguyễn', '', 4, '2024-11-20'),
 (8, 'SLU326804159', 'Hân', 'Trần', '', 5, '2024-11-20'),
-(9, 'IWT054217836', 'Đức', 'Trần', '', 6, '2024-11-20');
+(9, 'IWT054217836', 'Đức', 'Trần', 'images.jpg', 6, '2024-11-20'),
+(10, 'HNG086147329', 'Alex', 'Nguyễn', '', 7, '2024-11-24');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -248,19 +254,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT cho bảng `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT cho bảng `borrow`
 --
 ALTER TABLE `borrow`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT cho bảng `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `course`
@@ -278,7 +284,7 @@ ALTER TABLE `returns`
 -- AUTO_INCREMENT cho bảng `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
