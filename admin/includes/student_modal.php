@@ -62,56 +62,67 @@
         </div>
     </div>
 </div>
-
-<!-- Edit -->
-<div class="modal fade" id="edit">
+<!-- Edit Student Modal -->
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="editStudentLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
+            <!-- Modal Header -->
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Edit Student</b></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="editStudentLabel"><b>Edit Student</b></h4>
             </div>
+
+            <!-- Modal Body -->
             <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="student_edit.php">
-                <input type="hidden" class="studid" name="id">
-                <div class="form-group">
-                    <label for="edit_firstname" class="col-sm-3 control-label">Firstname</label>
+                <form class="form-horizontal" method="POST" action="student_edit.php">
+                    <!-- Hidden Student ID -->
+                    <input type="hidden" class="studid" name="id">
 
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_firstname" name="firstname">
+                    <!-- Firstname Field -->
+                    <div class="form-group">
+                        <label for="edit_firstname" class="col-sm-3 control-label">Firstname</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="edit_firstname" name="firstname" placeholder="Enter first name" required>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="edit_lastname" class="col-sm-3 control-label">Lastname</label>
 
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_lastname" name="lastname">
+                    <!-- Lastname Field -->
+                    <div class="form-group">
+                        <label for="edit_lastname" class="col-sm-3 control-label">Lastname</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="edit_lastname" name="lastname" placeholder="Enter last name" required>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="course" class="col-sm-3 control-label">Course</label>
 
-                    <div class="col-sm-9">
-                      <select class="form-control" id="course" name="course" required>
-                        <option value="" selected id="selcourse"></option>
-                        <?php
-                          $sql = "SELECT * FROM course";
-                          $query = $conn->query($sql);
-                          while($row = $query->fetch_array()){
-                            echo "
-                              <option value='".$row['id']."'>".$row['code']."</option>
-                            ";
-                          }
-                        ?>
-                      </select>
+                    <!-- Course Dropdown -->
+                    <div class="form-group">
+                        <label for="course" class="col-sm-3 control-label">Course</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" id="course" name="course" required>
+                                <option value="" selected id="selcourse">- Select Course -</option>
+                                <?php
+                                    $sql = "SELECT * FROM course";
+                                    $query = $conn->query($sql);
+                                    while ($row = $query->fetch_array()) {
+                                        echo "<option value='" . $row['id'] . "'>" . $row['code'] . "</option>";
+                                    }
+                                ?>
+                            </select>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
+
+            <!-- Modal Footer -->
             <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-success btn-flat" name="edit"><i class="fa fa-check-square-o"></i> Update</button>
-              </form>
+                <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal">
+                    <i class="fa fa-close"></i> Close
+                </button>
+                <button type="submit" class="btn btn-success btn-flat" name="edit">
+                    <i class="fa fa-check-square-o"></i> Update
+                </button>
             </div>
         </div>
     </div>
