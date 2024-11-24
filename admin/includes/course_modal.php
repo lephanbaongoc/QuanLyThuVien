@@ -1,33 +1,44 @@
-<!-- Add -->
-<div class="modal fade" id="addnew">
+<!-- Add New Course Modal -->
+<div class="modal fade" id="addnew" tabindex="-1" role="dialog" aria-labelledby="addCourseLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
+            <!-- Modal Header -->
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Add New Course</b></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="addCourseLabel"><b>Add New Course</b></h4>
             </div>
+
+            <!-- Modal Body -->
             <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="course_add.php">
-                <div class="form-group">
-                    <label for="code" class="col-sm-3 control-label">Code</label>
-
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="code" name="code" required>
+                <form class="form-horizontal" method="POST" action="course_add.php">
+                    <!-- Course Code -->
+                    <div class="form-group">
+                        <label for="code" class="col-sm-3 control-label">Code</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="code" name="code" placeholder="Enter course code" required>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="title" class="col-sm-3 control-label">Title</label>
 
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="title" name="title" required>
+                    <!-- Course Title -->
+                    <div class="form-group">
+                        <label for="title" class="col-sm-3 control-label">Title</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="title" name="title" placeholder="Enter course title" required>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
+
+            <!-- Modal Footer -->
             <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-primary btn-flat" name="add"><i class="fa fa-save"></i> Save</button>
-              </form>
+                <button type="button" class="btn btn-default btn-flat" data-dismiss="modal">
+                    <i class="fa fa-close"></i> Close
+                </button>
+                <button type="submit" class="btn btn-primary btn-flat" name="add">
+                    <i class="fa fa-save"></i> Save
+                </button>
             </div>
         </div>
     </div>
