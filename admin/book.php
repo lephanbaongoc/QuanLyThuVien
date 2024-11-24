@@ -86,6 +86,7 @@
                   <th>Title</th>
                   <th>Author</th>
                   <th>Publisher</th>
+                  <th>File Name</th>
                   <th>Status</th>
                   <th>Tools</th>
                 </thead>
@@ -100,6 +101,7 @@
                       else{
                         $status = '<span class="label label-success">available</span>';
                       }
+                      $file_name = (!empty($row['file_name'])) ? '../files/'.$row['file_name'] : "File not found!";
                       echo "
                         <tr>
                           <td>".$row['name']."</td>
@@ -107,6 +109,10 @@
                           <td>".$row['title']."</td>
                           <td>".$row['author']."</td>
                           <td>".$row['publisher']."</td>
+                           <td>
+                            <a href='".$file_name."' target='_blank'>Click</a>
+                            <a href='#edit_file' data-toggle='modal' class='pull-right file' data-id='".$row['bookid']."'><span class='fa fa-edit'></span></a>
+                          </td>
                           <td>".$status."</td>
                           <td>
                             <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['bookid']."'><i class='fa fa-edit'></i> Edit</button>
@@ -151,6 +157,11 @@ $(function(){
   $(document).on('click', '.delete', function(e){
     e.preventDefault();
     $('#delete').modal('show');
+    var id = $(this).data('id');
+    getRow(id);
+  });
+  $(document).on('click', '.file', function(e){
+    e.preventDefault();
     var id = $(this).data('id');
     getRow(id);
   });
