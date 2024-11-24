@@ -8,63 +8,65 @@
             	<h4 class="modal-title"><b>Add New Book</b></h4>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" action="book_add.php">
-          		  <div class="form-group">
-                  	<label for="isbn" class="col-sm-3 control-label">ISBN</label>
-
-                  	<div class="col-sm-9">
-                    	<input type="text" class="form-control" id="isbn" name="isbn" required>
-                  	</div>
-                </div>
-                <div class="form-group">
-                    <label for="title" class="col-sm-3 control-label">Title</label>
-
-                    <div class="col-sm-9">
-                      <textarea class="form-control" name="title" id="title" required></textarea>
+                <form class="form-horizontal" method="POST" action="book_add.php">
+                    <!-- ISBN -->
+                    <div class="form-group">
+                        <label for="isbn" class="col-sm-3 control-label">ISBN</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="isbn" name="isbn" placeholder="Enter ISBN" required>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="category" class="col-sm-3 control-label">Category</label>
 
-                    <div class="col-sm-9">
-                      <select class="form-control" name="category" id="category" required>
-                        <option value="" selected>- Select -</option>
-                        <?php
-                          $sql = "SELECT * FROM category";
-                          $query = $conn->query($sql);
-                          while($crow = $query->fetch_assoc()){
-                            echo "
-                              <option value='".$crow['id']."'>".$crow['name']."</option>
-                            ";
-                          }
-                        ?>
-                      </select>
+                    <!-- Title -->
+                    <div class="form-group">
+                        <label for="title" class="col-sm-3 control-label">Title</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" id="title" name="title" placeholder="Enter book title" rows="2" required></textarea>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="author" class="col-sm-3 control-label">Author</label>
 
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="author" name="author">
+                    <!-- Category -->
+                    <div class="form-group">
+                        <label for="category" class="col-sm-3 control-label">Category</label>
+                        <div class="col-sm-9">
+                            <select class="form-control" id="category" name="category" required>
+                                <option value="" selected disabled>- Select -</option>
+                                <?php
+                                  $sql = "SELECT * FROM category";
+                                  $query = $conn->query($sql);
+                                  while($crow = $query->fetch_assoc()){
+                                      echo "<option value='".$crow['id']."'>".$crow['name']."</option>";
+                                  }
+                                ?>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="publisher" class="col-sm-3 control-label">Publisher</label>
 
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="publisher" name="publisher">
+                    <!-- Author -->
+                    <div class="form-group">
+                        <label for="author" class="col-sm-3 control-label">Author</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="author" name="author" placeholder="Enter author name">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label for="datepicker_add" class="col-sm-3 control-label">Publish Date</label>
 
-                    <div class="col-sm-9">
-                      <div class="date">
-                        <input type="text" class="form-control" id="datepicker_add" name="pub_date">
-                      </div>
+                    <!-- Publisher -->
+                    <div class="form-group">
+                        <label for="publisher" class="col-sm-3 control-label">Publisher</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="publisher" name="publisher" placeholder="Enter publisher name">
+                        </div>
                     </div>
-                </div>
-          	</div>
+
+                    <!-- Publish Date -->
+                    <div class="form-group">
+                        <label for="datepicker_add" class="col-sm-3 control-label">Publish Date</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="datepicker_add" name="pub_date" placeholder="Select publish date">
+                        </div>
+                    </div>
+                </form>
+            </div>
           	<div class="modal-footer">
             	<button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
             	<button type="submit" class="btn btn-primary btn-flat" name="add"><i class="fa fa-save"></i> Save</button>
