@@ -1,23 +1,24 @@
 # QuanLyThuVien
 
-## Giới thiệu
-Dự án **QuanLyThuVien** là một hệ thống quản lý thư viện được xây dựng nhằm hỗ trợ việc quản lý sách, độc giả, và các giao dịch mượn trả sách trong thư viện. Hệ thống này giúp thư viện dễ dàng theo dõi số lượng sách, tình trạng mượn trả, và thông tin của các độc giả.
+## Introduction
+**QuanLyThuVien** is a library management system developed to assist in managing books, readers, and book borrowing/return transactions in the library. This system helps the library easily track the number of books, borrowing/return status, and information of the readers.
 
-## Các tính năng
-- **Quản lý sách**: Thêm, sửa, xóa, và tìm kiếm sách trong thư viện.
-- **Quản lý độc giả**: Thêm, sửa, xóa, và theo dõi thông tin độc giả.
-- **Quản lý mượn trả**: Ghi nhận và theo dõi các giao dịch mượn trả sách.
-- **Tìm kiếm nâng cao**: Tìm kiếm sách theo các tiêu chí như tên sách, tác giả, thể loại.
+## Features
+- **Book Management**: Add, edit, delete, and search for books in the library.
+- **Reader Management**: Add, edit, delete, and track reader information.
+- **Borrowing and Returning Management**: Record and track book borrowing and returning transactions.
+- **Advanced Search**: Search for books based on criteria such as book title, author, and genre.
 
-## Cài đặt
-Để cài đặt và chạy dự án trên máy tính của bạn, hãy làm theo các bước dưới đây:
+## Installation
+To install and run the project on your computer, follow these steps:
 
-1. Clone repository về máy:
+1. Clone the repository to your local computer:
    ```bash
    git clone https://github.com/lephanbaongoc/QuanLyThuVien.git
-2. Chạy XAMPP từ đường dẫn repository trong máy của bạn
 
-## Các thành viên
+2. Run XAMPP from the repository directory on your computer.
+
+## Team Members
    [Lê Phan Bảo Ngọc](https://github.com/lephanbaongoc)
 
   [Nguyễn Bảo Uyên](https://github.com/NguyenBaoUyen)
