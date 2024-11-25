@@ -8,7 +8,7 @@
             	<h4 class="modal-title"><b>Add New Book</b></h4>
           	</div>
           	<div class="modal-body">
-            	<form class="form-horizontal" method="POST" enctype="multipart/form-data" action="book_add.php">
+            	<form class="form-horizontal" method="POST"  enctype="multipart/form-data" action="book_add.php">
           		  <div class="form-group">
                   	<label for="isbn" class="col-sm-3 control-label">ISBN</label>
 
@@ -53,13 +53,6 @@
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="publisher" name="publisher">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="file_name" class="col-sm-3 control-label">File</label>
-
-                    <div class="col-sm-9">
-                      <input type="file" id="file_name" name="file_name">
                     </div>
                 </div>
                 <div class="form-group">
@@ -213,4 +206,5 @@
     </div>
 </div>
 
+     
      
