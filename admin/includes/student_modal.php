@@ -8,7 +8,7 @@
               <h4 class="modal-title"><b>Add New Student</b></h4>
             </div>
             <div class="modal-body">
-              <form class="form-horizontal" method="POST" action="student_add.php">
+              <form class="form-horizontal" method="POST" enctype="multipart/form-data" action="student_add.php">
                 <div class="form-group">
                     <label for="firstname" class="col-sm-3 control-label">Firstname</label>
 
@@ -45,7 +45,7 @@
                     <label for="photo" class="col-sm-3 control-label">Photo</label>
 
                     <div class="col-sm-9">
-                      <input type="file" id="photo" name="photo">
+                      <input type="file" class="form-control" id="photo" name="photo">
                     </div>
                 </div>
             </div>

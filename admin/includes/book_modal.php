@@ -59,7 +59,7 @@
                     <label for="file_name" class="col-sm-3 control-label">File</label>
 
                     <div class="col-sm-9">
-                      <input type="file" id="file_name" name="file_name">
+                      <input type="file" class="form-control" id="file_name" name="file_name">
                     </div>
                 </div>
                 <div class="form-group">
