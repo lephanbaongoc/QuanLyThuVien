@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 24, 2024 lúc 08:09 AM
+-- Thời gian đã tạo: Th10 25, 2024 lúc 06:31 AM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -68,11 +68,12 @@ CREATE TABLE `books` (
 
 INSERT INTO `books` (`id`, `isbn`, `category_id`, `title`, `author`, `publisher`, `file_name`, `publish_date`, `status`) VALUES
 (2, 'bookisbntest', 2, 'Calculus Made Easy', 'Author Me', 'Self Publish Inc', '', '2018-05-02', 0),
-(13, '159420229X', 3, 'Moonwalking with Einstein: The Art and Science of Remembering Everything ', 'Joshua Foer ', 'Penguin Press HC', '', '2020-05-11', 0),
+(13, '159420229X', 3, 'Moonwalking with Einstein: The Art and Science of Remembering Everything ', 'Joshua Foer ', 'Penguin Press HC', 'moonwalking-with-einstein-the-art-and-science-of-remembering-everything.pdf', '2020-05-11', 0),
 (14, 'worldwar2abcd', 4, 'World War II', 'Hitle', 'HItle', '', '1934-06-26', 0),
 (15, 'romeoandjuliet', 4, 'Romeo & Juliet', 'Apple', 'Titanic', 'romeo-and-juliet.pdf', '1999-12-23', 0),
 (17, 'blueeyes', 5, 'Mắt Biếc', 'Nguyễn Ngọc Ánh', 'Nhà xuất bản Trẻ', 'mat-biec.pdf', '1990-01-01', 1),
-(18, 'dataanalysiswithmexv', 3, 'Data Analysis with Microsoft Excel', 'Berk & Carey', 'Microsoft', '', '2019-02-13', 0);
+(18, 'dataanalysiswithmexv', 3, 'Data Analysis with Microsoft Excel', 'Berk & Carey', 'Microsoft', '', '2019-02-13', 0),
+(19, 'demen', 4, 'Dế mèn phiêu lưu ký', 'Tô Hoài', 'Kim Đồng', 'demen.pdf', '2012-10-19', 0);
 
 -- --------------------------------------------------------
 
@@ -186,7 +187,8 @@ INSERT INTO `students` (`id`, `student_id`, `firstname`, `lastname`, `photo`, `c
 (7, 'FSI394270158', 'Uyên', 'Nguyễn', '', 4, '2024-11-20'),
 (8, 'SLU326804159', 'Hân', 'Trần', '', 5, '2024-11-20'),
 (9, 'IWT054217836', 'Đức', 'Trần', 'images.jpg', 6, '2024-11-20'),
-(10, 'HNG086147329', 'Alex', 'Nguyễn', '', 7, '2024-11-24');
+(10, 'HNG086147329', 'Alex', 'Nguyễn', '', 7, '2024-11-24'),
+(13, 'ZAE896235704', 'Như', 'Phan', 'An.jpg', 3, '2024-11-25');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -254,7 +256,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT cho bảng `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT cho bảng `borrow`
@@ -284,7 +286,7 @@ ALTER TABLE `returns`
 -- AUTO_INCREMENT cho bảng `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

@@ -44,6 +44,7 @@
 			        				<th>ISBN</th>
 			        				<th>Title</th>
 			        				<th>Author</th>
+									<th>File</th>
 			        			</thead>
 			        			<tbody>
 			        			<?php
